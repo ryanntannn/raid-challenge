@@ -1,0 +1,16 @@
+.popup {
+	position: fixed;
+	bottom: 30px;
+	right: 50%;
+	transform: translate(50%, -50%);
+	transition: 0.4s;
+	opacity: 0;
+	background-color: var(--fgd);
+	color: var(--bgd);
+	padding: 20px;
+	font-weight: 600;
+}
+
+.popup.visible {
+	opacity: 1;
+}
