@@ -1,4 +1,5 @@
 import React from 'react';
+import usePopup from '../../components/PopupBox/PopupBox';
 import './style.css';
 
 export default function LandingPage() {
@@ -9,6 +10,8 @@ export default function LandingPage() {
 		`annonymous-${Math.round(Math.random() * 100)}`
 	);
 	const [customName, setCustomName] = React.useState<string>('');
+
+	const popup = usePopup();
 
 	function onNameChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setCustomName((prevValue) => {
@@ -31,7 +34,9 @@ export default function LandingPage() {
 
 	function onClickSend() {
 		const senderName = customName.length > 0 ? customName : defaultName;
-		//TODO: show popup box on send
+		popup.showMessage!(
+			`sent message successfully: [${senderName}] ${message}`
+		);
 	}
 
 	return (

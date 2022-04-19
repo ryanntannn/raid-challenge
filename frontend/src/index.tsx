@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { PopupBoxProvider } from './components/PopupBox/PopupBox';
 import './master.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<React.StrictMode>
-		<LandingPage />
+		<PopupBoxProvider>
+			<LandingPage />
+		</PopupBoxProvider>
 	</React.StrictMode>
 );
 
