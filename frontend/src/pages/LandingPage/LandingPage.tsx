@@ -1,5 +1,6 @@
 import React from 'react';
 import usePopup from '../../components/PopupBox/PopupBox';
+import AxiosBase from '../../utils/AxiosBase';
 import './style.css';
 
 export default function LandingPage() {
@@ -32,11 +33,20 @@ export default function LandingPage() {
 		return message.length <= 0;
 	}
 
-	function onClickSend() {
-		const senderName = customName.length > 0 ? customName : defaultName;
-		popup.showMessage!(
-			`sent message successfully: [${senderName}] ${message}`
-		);
+	async function onClickSend() {
+		try {
+			const senderName = customName.length > 0 ? customName : defaultName; //Use default name if custom name is not specified
+			const res = await AxiosBase.post('/new-message', {
+				sender: senderName,
+				message,
+			});
+			console.log(res);
+			popup.showMessage!(
+				`added message successfully: [${senderName}] ${message}`
+			);
+		} catch (err) {
+			popup.showMessage!(`${err}`);
+		}
 	}
 
 	return (
