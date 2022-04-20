@@ -1,0 +1,13 @@
+.message-adder .name-input-area {
+	margin: 10px 0;
+}
+
+.message-adder .word-count {
+	padding: 20px 0 0 0;
+}
+
+.message-adder .send-button {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
