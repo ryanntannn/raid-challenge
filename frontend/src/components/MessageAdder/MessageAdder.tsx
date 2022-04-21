@@ -51,7 +51,7 @@ export default function MessageAdder() {
 
 	return (
 		<div className='message-adder'>
-			<h1>msngr</h1>
+			<h1 className='mobile-hide'>fifty.io</h1>
 			<div className='name-input-area'>
 				from:{' '}
 				<input
@@ -63,7 +63,6 @@ export default function MessageAdder() {
 			<textarea
 				className='shadow'
 				name='Text1'
-				rows={5}
 				value={message}
 				placeholder='write a message here'
 				onChange={onMessageChange}></textarea>

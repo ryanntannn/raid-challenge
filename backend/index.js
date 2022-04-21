@@ -25,6 +25,8 @@ const messagesCollection = db.collection('messages');
 async function createRecord(item) {
 	//Validate Message;
 	if (!item.message || !item.sender) throw 'Invalid Message';
+	item.likes = 0;
+	item.timestamp = Date.now();
 	const res = await messagesCollection.insertOne(item);
 	return 'Record successfully created in the database';
 }
@@ -33,6 +35,30 @@ app.post('/new-message', async (req, res) => {
 	try {
 		await createRecord(req.body);
 		return res.status(200).json();
+	} catch (err) {
+		console.log(err);
+		return res.status(400).json(err);
+	}
+});
+
+const MESSAGES_PER_PAGE = 4;
+
+async function getRecords(page) {
+	const res = await messagesCollection
+		.find()
+		.sort({ likes: -1 })
+		.limit(MESSAGES_PER_PAGE)
+		.skip(MESSAGES_PER_PAGE * (page - 1))
+		.toArray();
+	return res;
+}
+
+app.get('/messages', async (req, res) => {
+	try {
+		if (req.query.page == undefined) return res.status(400).json();
+		req.query.page = parseInt(req.query.page);
+		const records = await getRecords(req.query.page);
+		return res.status(200).json(records);
 	} catch (err) {
 		console.log(err);
 		return res.status(400).json(err);

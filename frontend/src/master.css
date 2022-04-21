@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
 	--bgd: #363062;
@@ -9,7 +9,7 @@
 
 body {
 	margin: 0;
-	font-family: 'Syne', sans-serif;
+	font-family: 'Inter', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -23,13 +23,13 @@ code {
 }
 
 * {
-	font-family: 'Syne', sans-serif;
+	font-family: 'Inter', sans-serif;
 	margin: 0;
 	padding: 0;
 	line-height: 1;
 }
 
-.center {
+.page {
 	position: absolute;
 	top: 50%;
 	right: 50%;
@@ -96,4 +96,28 @@ button:disabled {
 
 button:hover {
 	background-color: var(--bgl);
+	color: var(--fgl);
+}
+
+.mobile-show {
+	display: none;
+}
+
+@media only screen and (max-width: 750px) {
+	.mobile-hide {
+		display: none;
+	}
+
+	.mobile-show {
+		display: inline;
+	}
+
+	.page {
+		position: absolute;
+		transform: none;
+		top: 0;
+		left: 0;
+		width: calc(100vw - 60px);
+		padding: 30px;
+	}
 }

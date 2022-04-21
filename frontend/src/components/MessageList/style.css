@@ -13,9 +13,19 @@
 	margin: auto;
 }
 
+.message-list .no-left {
+	text-align: center;
+	line-height: 2;
+}
+
+.message-list .title {
+	line-height: 2;
+}
+
 @media only screen and (max-width: 750px) {
 	.message-list {
 		width: 100%;
 		max-width: 100%;
+		padding-bottom: 30px;
 	}
 }
