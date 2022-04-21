@@ -1,0 +1,9 @@
+.message-list .message {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	margin: 10px 0;
+}
+
+.message-list .like-button {
+	text-align: right;
+}

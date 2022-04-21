@@ -1,13 +1,20 @@
+.message-adder {
+	height: min-content;
+}
+
 .message-adder .name-input-area {
 	margin: 10px 0;
 }
 
+.message-adder .bottom-row {
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+
 .message-adder .word-count {
-	padding: 20px 0 0 0;
+	padding: 15px;
 }
 
 .message-adder .send-button {
-	position: absolute;
-	right: 0px;
-	bottom: 0px;
+	margin: 5px 0;
 }

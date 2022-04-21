@@ -61,22 +61,23 @@ export default function MessageAdder() {
 					onChange={onNameChange}></input>
 			</div>
 			<textarea
-				className='text-bubble shadow'
+				className='shadow'
 				name='Text1'
 				rows={5}
 				value={message}
 				placeholder='write a message here'
 				onChange={onMessageChange}></textarea>
-			<div className='word-count'>
-				{message.length}/{MESSAGE_MAX_LENGTH}
+			<div className='bottom-row'>
+				<div className='word-count'>
+					{message.length}/{MESSAGE_MAX_LENGTH}
+				</div>
+				<button
+					className='rounded send-button'
+					disabled={isButtonDisabled()}
+					onClick={onClickSend}>
+					send
+				</button>
 			</div>
-			<br />
-			<button
-				className='rounded send-button'
-				disabled={isButtonDisabled()}
-				onClick={onClickSend}>
-				send
-			</button>
 		</div>
 	);
 }
