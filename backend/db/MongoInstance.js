@@ -9,6 +9,8 @@ class MongoInstance {
 			serverApi: ServerApiVersion.v1,
 		});
 		this.connect();
+		this.db = this.client.db('raid-challenge');
+		this.messagesCollection = this.db.collection('messages');
 	}
 
 	async connect() {
