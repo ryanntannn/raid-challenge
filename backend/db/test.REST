@@ -1,0 +1,6 @@
+POST http://localhost:42069/like-message HTTP/1.1
+content-type: application/json
+
+{
+    "messageId": "62617a40a3f40d26660bceca"
+}

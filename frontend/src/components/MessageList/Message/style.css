@@ -1,0 +1,25 @@
+.message-list .message {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	margin: 10px 0;
+}
+
+.message-list .like-button {
+	text-align: right;
+	color: var(--bgl);
+	font-weight: 600;
+}
+
+.message-list .like-button:hover {
+	color: var(--fgl);
+}
+
+.message-list .sender {
+	color: var(--bgl);
+}
+
+.message-list .date {
+	font-weight: 600;
+	font-size: 0.8em;
+	line-height: 1.8;
+}

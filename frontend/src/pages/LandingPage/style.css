@@ -1,0 +1,11 @@
+.landing.page {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 30px;
+}
+
+@media only screen and (max-width: 750px) {
+	.landing.page {
+		display: inline;
+	}
+}
