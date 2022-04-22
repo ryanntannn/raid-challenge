@@ -1,2 +1,5 @@
+//entry file
+
 require('dotenv').config();
-const server = require('./ExpressServer');
+require('./db/MongoInstance');
+require('./ExpressServer');
