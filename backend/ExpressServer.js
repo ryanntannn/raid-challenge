@@ -2,6 +2,7 @@ const express = require('express');
 const MongoInstance = require('./db/MongoInstance');
 const newMessage = require('./services/newMessage');
 const getMessages = require('./services/getMessages');
+const likeMessage = require('./services/likeMessage');
 const app = express();
 
 class ExpressServer {
@@ -39,6 +40,8 @@ class ExpressServer {
 		app.post('/new-message', newMessage);
 
 		app.get('/messages', getMessages);
+
+		app.post('/like-message', likeMessage);
 
 		app.listen(42069, function () {
 			console.log('listening on 42069');

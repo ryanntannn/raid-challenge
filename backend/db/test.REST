@@ -1,7 +1,6 @@
-POST http://localhost:42069/new-message HTTP/1.1
+POST http://localhost:42069/like-message HTTP/1.1
 content-type: application/json
 
 {
-    "sender": "sample",
-    "message": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "messageId": "62617a40a3f40d26660bceca"
 }

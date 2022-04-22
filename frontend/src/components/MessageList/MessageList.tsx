@@ -10,7 +10,9 @@ export default function MessageList() {
 	function renderMessages(messages: IMessage[]) {
 		if (messages.length <= 0)
 			return <h3 className='no-left'>no messages left</h3>;
-		return messages.map((message) => <Message {...message} />);
+		return messages.map((message, i) => (
+			<Message {...message} key={i + pageNumber * 4} />
+		));
 	}
 
 	async function onGetMessages(_pageNumber: number) {
